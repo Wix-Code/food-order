@@ -1,0 +1,155 @@
+.menuu{
+  width: 100%;
+  background-image: url(../div/back.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 30px 0px;
+}
+.menu1{
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.men1{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgb(255, 255, 255);
+  align-items: center;
+}
+.imm{
+  padding: 30px 0px;
+}
+.imm img{
+  width: 200px;
+  height: 200px;
+}
+.food{
+  width: 100%;
+  padding: 20px 0;
+  background: rgb(75, 187, 75);
+  color: white;
+  text-align: center;
+}
+.food h3{
+  font-size: 22px;
+  font-weight: 500;
+}
+
+/***------Deliver---------***/
+.cancan{
+  width: 100%;
+  background: rgb(0, 109, 0);
+  padding: 30px 0px;
+}
+.cancan1{
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+}
+.cancan1 h1{
+  font-size: 50px;
+}
+.cancan2{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  background: rgb(157, 204, 157);
+  padding: 15px 20px;
+  opacity: 0.1px;
+  margin: auto;
+}
+.cancan2 a h2:first-child{
+  color: rgb(38, 148, 38);
+}
+.cancan2 h2:last-child{
+  color: white;
+}
+.cancan2 span{
+  font-size: 40px;
+  color: rgb(43, 42, 42);
+}
+
+@media screen and (max-width: 450px) {
+  .menuu{
+    padding: 20px;
+  }
+  .menu1{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .men1{
+    width: 100%;
+  }
+  .cancan1 h1{
+    font-size: 18px;
+  }
+  .cancan2{
+    padding: 10px;
+  }
+  .cancan2 h2{
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width : 451px) and (max-width : 601px) {
+  .menuu{
+    padding: 20px;
+  }
+  .menu1{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .men1{
+    width: 100%;
+  }
+  .cancan1 h1{
+    font-size: 18px;
+  }
+  .cancan2{
+    padding: 10px;
+  }
+  .cancan2 h2{
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width : 950px) and (min-width : 601px) {
+  .menuu{
+    padding: 20px;
+  }
+  .menu1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cancan1 h1{
+    font-size: 40px;
+  }
+  .cancan1 h1{
+    font-size: 22px;
+  }
+  .cancan2{
+    padding: 10px;
+  }
+  .cancan2 h2{
+    font-size: 17px;
+  }
+}
+
+
+@media screen and (max-width : 1099px) and (min-width : 951px){
+  .menuu{
+    padding: 20px;
+  }
+  .menu1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

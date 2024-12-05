@@ -1,0 +1,157 @@
+.checkout{
+  background: rgb(0, 53, 0);
+}
+.check_out{
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  padding: 40px 0px;
+  gap: 20px;
+}
+
+.checkout_input{
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+.checkout1{
+  flex: 2;
+  padding: 20px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.checkout2{
+  flex: 1;
+}
+.checkout2 h1{
+  font-size: 20px;
+  
+}
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+form button{
+  background: #0f921a;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.input_check{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.input_check input{
+  width: 100%;
+  border: 1px solid #d1d1d1;
+  padding: 15px;
+  font-size: 16px;
+}
+
+.check_sum{
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.summary{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.summ{
+  display: flex;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+.summ img{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+.sum1 h2{
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.sum1 p{
+  font-size: 11px;
+}
+.sum2 h3{
+  font-size: 14px;
+}
+.sum2 p{
+  font-size: 14px;
+}
+
+@media screen and (max-width : 599px){
+  .check_out{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .checkout1,.checkout2{
+    margin: 0px 20px;
+  }
+  .checkout1 h1{
+    font-size: 18px;
+  }
+  .checkout_input{
+    display: flex;
+    flex-direction: column;
+  }
+  .check_sum h1{
+    font-size: 18px;
+  }
+  .input_check input, .input_check label{
+    font-size: 14px;
+  }
+  form button{
+    font-size: 14px;
+  }
+}
+@media screen and (min-width : 600px) and (max-width : 850px){
+  .check_out{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .checkout1,.checkout2{
+    margin: 0px 20px;
+  }
+  .checkout1 h1{
+    font-size: 18px;
+  }
+  
+  .check_sum h1{
+    font-size: 18px;
+  }
+  .input_check input, .input_check label{
+    font-size: 14px;
+  }
+  form button{
+    font-size: 14px;
+  }
+}
+@media screen and (min-width : 851px) and (max-width : 1099px){
+  .checkout1{
+    margin-left: 20px;
+  }
+  .checkout2{
+    margin-right: 20px;
+  }
+  .checkout1 h1{
+    font-size: 24px;
+  }
+}

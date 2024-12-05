@@ -1,0 +1,328 @@
+.homie{
+  width: 100%;
+  background: rgb(0, 22, 0);
+  color: white;
+  height: 70vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homi{
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.homi1 h2{
+  font-weight: 900;
+  font-size: 50px;
+  text-transform: capitalize;
+}
+.homi2 h1{
+  font-size: 60px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.homi2 h4{
+  font-size: 20px;
+}
+.homi2{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.butt button{
+  color: white;
+  border-radius: 50px;
+  background: rgb(50, 205, 140);
+  padding: 20px 45px;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.butt button:hover{
+  transition: 0.5s;
+  background: rgb(204, 204, 0);
+}
+
+/**---------Story----------**/
+.story{
+  width: 100%;
+  background: rgb(230, 230, 230);
+  padding: 40px 0;
+}
+.story1{
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+}
+.story2{
+  flex: 1;
+  background: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 2px;
+  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.39);
+}
+.story2 h2{
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.story2 p{
+  line-height: 26px;
+  text-align: justify;
+}
+.story1 .story3{
+  flex: 1;
+  padding: 20px;
+  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.39);
+  background: white;
+  border-radius: 2px;
+}
+.story3 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/**---------Order----------**/
+
+.order{
+  width: 100%;
+  padding: 40px 0;
+  background-image: url(../div/back.jpg);
+  background-position: cover;
+  background-size: cover;
+}
+.orders{
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); 
+}
+.ord{
+  background: rgb(20, 126, 20);
+  height: 260px;
+  width: 350px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ord:hover{
+  border: dotted white 2px;
+}
+.ord img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.or h2{
+  text-transform: capitalize;
+}
+.or{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.or h4{
+  font-weight: 500;
+  font-size: 18px;
+}
+
+/***------ Icons -------**/
+.icons{
+  width: 100%;
+  padding: 60px 0;
+}
+.icon{
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+.icon1, .icon2, .icon3, .icon4{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 20px;
+  align-items: center;
+}
+.icon1::after, .icon2::after,.icon3::after, .icon4::after{
+  content: "";
+  position: absolute;
+  top: 140px;
+  width: 50px;
+  height: 5px;
+  background: rgb(20, 126, 20);
+}
+.icon1 h4, .icon2 h4, .icon3 h4, .icon4 h4{
+  text-align: center;
+  line-height: 27px;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 30px;
+}
+.icon1 h3, .icon2 h3, .icon3 h3, .icon4 h3{
+  text-transform: uppercase;
+  font-size: 15px;
+}
+.icon1 span, .icon2 span, .icon3 span, .icon4 span{
+  font-size: 60px;
+  color: rgb(43, 43, 43);
+}
+
+@media screen and (max-width : 300px){
+  .homi2 h1 i{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  .homi1 h2 i{
+    font-weight: 900;
+    font-size: 15px;
+    text-transform: capitalize;
+  }
+  .homi2 h4{
+    font-size: 15px;
+  }
+}
+@media screen and (max-width : 750px) {
+  .story1{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .homie{
+    height: 60vh;
+    padding: 20px;
+  }
+  .butt button{
+    font-size: 14px;
+    padding: 17px 35px;
+  }
+  .homi1 h2{
+    font-size: 25px;
+  }
+  .homi2 h1{
+    font-size: 25px;
+  }
+  .orders{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  .ord{
+    width: 100%;
+  }
+  .icon{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  .icon1, .icon2, .icon3, .icon4{
+    width: 100%;
+  }
+  .or h2{
+    font-size: 18px;
+  }
+  .or h4{
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width : 950px) and (min-width : 751px) {
+  .story1{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .homie{
+    height: 60vh;
+    padding: 20px;
+  }
+  .homi1 h2{
+    font-size: 25px;
+  }
+  .homi2 h1{
+    font-size: 25px;
+  }
+  .orders{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  .ord{
+    width: 100%;
+  }
+  .icon{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  .icon1, .icon2, .icon3, .icon4{
+    width: 100%;
+  }
+  .or h2{
+    font-size: 18px;
+  }
+  .or h4{
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width : 1099px) and (min-width : 951px) {
+  .story1{
+    display: flex;
+    padding: 20px;
+  }
+  .homie{
+    height: 40vh;
+    padding: 20px;
+  }
+  .homi1 h2{
+    font-size: 25px;
+  }
+  .homi2 h1{
+    font-size: 25px;
+  }
+  .orders{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  .ord{
+    width: 100%;
+  }
+  .icon{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+  }
+  .icon1, .icon2, .icon3, .icon4{
+    width: 100%;
+  }
+  .or h2{
+    font-size: 18px;
+  }
+  .or h4{
+    font-size: 16px;
+  }
+}
+

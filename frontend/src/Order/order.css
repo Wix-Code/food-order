@@ -1,0 +1,38 @@
+.orders_page{
+  max-width: 1100px;
+  margin: auto;
+}
+.orderpage{
+  display: flex;
+  margin: 20px 0px;
+  flex-direction: column;
+  gap: 20px;
+}
+.orders_page h1{
+  margin-top: 20px;
+  color: #2e2e2eee;
+}
+.order_pg{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eeee;
+  padding: 20px;
+
+}
+.order_pg h2{
+  text-transform: capitalize;
+  font-size: 22px;
+  color: #1a1a1aee;
+}
+.order_qty{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.order_qty p{
+  color: #4b4b4bee;
+}
+@media screen and (max-width : 800px) {
+  
+}

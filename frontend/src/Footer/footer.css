@@ -1,0 +1,141 @@
+.footer{
+  width: 100%;
+  background: rgb(46, 143, 46);
+}
+.foot{
+  max-width: 1100px;
+  margin: auto;
+  color: white;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.foot1, .foot2, .foot3{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+.foot1 h1 span{
+  font-size: 45px;
+}
+.foot1 h1{
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+.foot2{
+  text-align: center;
+  border-left: 2px white dotted;
+  border-right: 2px white dotted;
+  padding: 0px 30px;
+}
+.foot21{
+  display: flex;
+  text-transform: uppercase;
+}
+.foot21 p{
+  padding: 0px 20px;
+  border-right: white solid 2px;
+  cursor: pointer;
+}
+.foot21 p:hover{
+  text-decoration: underline;
+  transition: 0.5s;
+}
+.foot3 h1, .foot2 h1{
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 25px;
+}
+.foot33{
+  display: flex;
+  gap: 20px;
+  font-size: 50px;
+}
+.foot33 span{
+  text-align: center;
+  color: white;
+}
+.foot33 span:hover{
+  color: rgb(17, 17, 17);
+  transition: 0.6s;
+}
+
+@media screen and (max-width : 750px){
+  .foot21 p{
+    font-size: 9px;
+  }
+  .foot33 span{
+    font-size: 16px;
+  }
+  .foot3 h1, .foot2 h1{
+    font-size: 20px;
+  }
+  .foot1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .foot1 h1{
+    font-size: 17px;
+    text-align: center;
+  }
+  .foot1 h1 span{
+    font-size: 17px;
+  }
+  .foot1 p{
+    font-size: 11px;
+  }
+  .foot2 h1, .foot3 h1{
+    font-size: 13px;
+  }
+  .foot{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+  }
+}
+@media screen and (min-width : 751px) and (max-width : 1099px) {
+  .foot{
+    padding: 40px 20px;
+    display: flex;
+    gap: 30px;
+  }
+  .foot1, .foot3,.foot2{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .foot21 p{
+    font-size: 9px;
+  }
+  .foot33 span{
+    font-size: 16px;
+  }
+  .foot3 h1, .foot2 h1{
+    font-size: 20px;
+  }
+  .foot1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .foot1 h1{
+    font-size: 17px;
+    text-align: center;
+  }
+  .foot1 h1 span{
+    font-size: 17px;
+  }
+  .foot1 p{
+    font-size: 11px;
+  }
+  .foot2 h1, .foot3 h1{
+    font-size: 13px;
+  }
+}

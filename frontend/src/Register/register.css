@@ -1,0 +1,54 @@
+.signup{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0px;
+  background: rgb(0, 66, 0);
+}
+.sign1{
+  max-width: 1100px;
+  margin: auto;
+}
+.signing{
+  background: white;
+  padding: 20px 30px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.sign2{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sign2 input{
+  padding: 20px;
+  border: 1px black solid;
+  width: 100%;
+}
+.sign2 span, .sign1 span{
+  color: green;
+  font-weight: 600;
+}
+.sig button{
+  font-size: 16px;
+  padding: 20px;
+  margin-top: 15px;
+  color: white;
+  background: green;
+  width: 100%;
+  cursor: pointer;
+}
+
+@media screen and (max-width : 1099px){
+ .sign1{
+   padding: 0px 20px;
+   width: 100%;
+ }
+ .signing{
+  width: 100% 
+ }
+}

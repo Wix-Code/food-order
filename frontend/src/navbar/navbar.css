@@ -1,0 +1,146 @@
+.navbar{
+  background: rgb(46, 143, 46);
+  padding: 0px 0px;
+  width: 100%;
+  position: sticky;
+  z-index: 99;
+  height: 100px;
+  top: 0;
+}
+.nav{
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.navbar1{
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+.navbar1 span{
+  font-size: 45px;
+}
+.navbar2{
+  display: flex;
+  text-transform: uppercase;
+  margin: 20px;
+  font-size: 18px;
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+.navbar2 .menu{
+  display: flex;
+  gap: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.navbar2 .log{
+  display: flex;
+  gap: 5px;
+  border-left: 2px solid white;  
+  border-right: 2px solid #ffffff;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.navbar2 .cont{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px 15px;
+  justify-content: center;
+}
+.navbar3{
+  display: flex;
+  font-size: 18px;
+  gap: 20px;
+  align-items: center;
+}
+.phone a h4{
+  color: white;
+}
+.navbar3 .cart, .navbar3 .phone{
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+.bar{
+  display: none;
+}
+.bar button{
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.navbar2 .phone, .navbar2 .cart{
+  display: none;
+}
+@media screen and (max-width : 950px) {
+  .navbar{
+    z-index: 99;
+    background: rgb(46, 143, 46);
+    top: 0;
+  }
+  .nav{
+    position: relative;
+  }
+  .navbar1{
+    margin-left: 20px;
+  }
+  .navbar1 h1{
+    font-size: 19px;
+  }
+  .navbar1 span{
+    font-size: 19px;
+  }
+  .navbar2,.navbar3{
+    display: none;
+  }
+  .bar{
+    display: flex;
+    margin-right: 20px;
+  }
+  .bar button{
+    font-size: 22px;
+  }
+
+  .navres{
+    position: absolute;
+    top: 100px;
+    transition: 0.5s;
+    transform: rotate3d(6px);
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding: 20px 0px;
+    text-transform: uppercase;
+    left: 0;
+    color: #353535;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: calc(100vh - 100px);
+  }
+  .navres .menu, .navres .log, .navres .cont, .navres .cart, .navres .phone{
+    display: flex;
+    width: max-content;
+    gap: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #353535;
+
+  }
+}
+
+@media screen and (max-width : 1099px)and (min-width : 951px){
+   .nav{
+    margin: 0px 20px;
+   }
+}

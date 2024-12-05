@@ -1,0 +1,103 @@
+.ricee{
+  width: 100%;
+  background-image: url(../div/back.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 40px 0;
+}
+.rice{
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.dat{
+  background: white;
+  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.39);
+  padding: 30px;
+  display: flex;
+  flex-direction:
+  column;
+  align-items: center;
+  gap: 25px;
+  text-align: center;
+  border-radius: 10px;
+}
+.dat h2{
+  font-weight: 500;
+  font-size: 20px;
+  color: rgb(10, 10, 10);
+  text-transform: capitalize;
+}
+.dat h3{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+  color: rgb(153, 153, 153);
+}
+.dat img{
+  width: 150pxpx;
+  height: 150px;
+}
+.dat button{
+  text-transform: uppercase;
+  font-weight: 500;
+  background: green;
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 35px;
+}
+.dat button:hover{
+  background: rgb(179, 179, 1);
+  transition: 0.6s;
+}
+
+
+@media screen and (max-width : 450px){
+  .rice{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    padding: 20px;
+  }
+  .dat{
+    width: 100%;
+  }
+}
+
+@media screen and (min-width : 451) and (max-width : 750px) {
+  .rice{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    padding: 20px;
+  }
+  .dat{
+    width: 100%;
+  }
+}
+@media screen and (max-width : 950px) and (min-width : 751px){
+  .rice{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 20px;
+  }
+  .dat{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width : 1099px)and (min-width : 951px) {
+  .rice{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px;
+  }
+  .dat{
+    width: 100%;
+  }
+}
