@@ -6,8 +6,10 @@ import './register.css'
 
 const ResetPassword = () => {
 
-  const { setError, setLoading, loading, error } = useContext(StoreContext)
+  const { setLoading, loading,  } = useContext(StoreContext)
   const navigate = useNavigate()
+  const [err, setErr] = useState<boolean>(false)
+
 
   const query = new URLSearchParams(useLocation().search);
   //const query = new URLSearchParams(window.location.search);
@@ -60,7 +62,7 @@ console.log("ugochukwu")
       if (res.data.success) {
         alert(res.data.message,);
       } else {
-        setError(res.data.message);
+        setErr(res.data.message);
       }
       navigate('/menu')
       setLoading(false)
@@ -72,7 +74,7 @@ console.log("ugochukwu")
         if (success === false) {
           console.error('Error:', message); // Logs "Invalid email or password"
         }
-        setError(message)
+        setErr(message)
         console.log(error, "is error")
       }
       setLoading(false)
@@ -94,9 +96,9 @@ console.log("ugochukwu")
             <input type="text" name='confirmPassword' onChange={change} placeholder='Password' />
           </div>
           {
-            error && (
+            err && (
               <div className="error">
-                {error}
+                {err}
               </div>
             )
           }

@@ -6,7 +6,9 @@ import { StoreContext } from '../Context/Context'
 
 const Register = () => {
 
-  const { loading, setLoading, error, setError} = useContext(StoreContext)
+  const { loading, setLoading } = useContext(StoreContext)
+  const [err, setErr] = useState<boolean>(false)
+
 
   const navigate = useNavigate()
 
@@ -47,7 +49,7 @@ const Register = () => {
       })
       
       if (!res.data.success) {
-        setError(res.data.message);
+        setErr(res.data.message);
       }
       navigate('/login')
       setLoading(false)
@@ -60,7 +62,7 @@ const Register = () => {
         if (success === false) {
           console.error('Error:', message); // Logs "Invalid email or password"
         }
-        setError(message)
+        setErr(message)
         console.log(error, "is error")
       }
       setLoading(false)
@@ -100,9 +102,9 @@ const Register = () => {
             <input type="text" name='confirmPassword' placeholder='Confirm Password'  onChange={change} required/>
           </div>
           {
-            error && (
+            err && (
               <div className="error">
-                {error}
+                {err}
               </div>
             )
           }

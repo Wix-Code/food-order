@@ -55,4 +55,7 @@
  .signing{
   width: 100% 
  }
+ .sign2 input, .sign2 p{
+  font-size: 12px;
+}
 }

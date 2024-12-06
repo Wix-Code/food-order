@@ -11,11 +11,13 @@ const ForgotPassword = () => {
     email: string
   }
 
+  const [err, setErr] = useState<boolean>(false)
+
   const [ input, setInput] = useState<Email>({
     email: ""
   })
 
-  const { setLoading, loading, error, setError} = useContext(StoreContext)
+  const { setLoading, loading } = useContext(StoreContext)
 
   const change = (e : any) => {
     setInput((prev) => ({...prev, [e.target.name] : e.target.value}))
@@ -32,7 +34,7 @@ const ForgotPassword = () => {
       console.log(input)
       
       if (!res.data.success) {
-        setError(res.data.message);
+        setErr(res.data.message);
       }
 
       alert("message sent to your email")
@@ -47,7 +49,7 @@ const ForgotPassword = () => {
         if (success === false) {
           console.error('Error:', message); // Logs "Invalid email or password"
         }
-        setError(message)
+        setErr(message)
         console.log(error, "is error")
       }
       setLoading(false)
@@ -65,9 +67,9 @@ const ForgotPassword = () => {
             <input type="email" name='email' onChange={change} placeholder='Email'/>
           </div>
           {
-            error && (
+            err && (
               <div className="error">
-                {error}
+                {err}
               </div>
             )
           }
