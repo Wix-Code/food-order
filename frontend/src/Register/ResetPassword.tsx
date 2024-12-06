@@ -51,7 +51,9 @@ console.log("ugochukwu")
     console.log(payload)
     const url = `https://food-order-1-p0hh.onrender.com/api/auth/resetpassword?id=${id}&token=${token}`;
     try {
-      const res = await axios.post(url, payload ,{ withCredentials: true});
+      const res = await axios.post(url, payload ,{headers: {
+        "Content-Type": "application/json",
+      }, withCredentials: true});
 
       if (res.data.success) {
         alert(res.data.message,);
