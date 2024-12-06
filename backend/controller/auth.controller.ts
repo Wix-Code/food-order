@@ -107,7 +107,7 @@ export const requestResetPassword : RequestHandler = async (req, res) => {
 
     const token = jwt.sign({id: user._id, email: user.email}, secret, {expiresIn: '1h'});
 
-    const url = `http://localhost:5000/resetpassword?id=${user._id}&token=${token}`;
+    const url = `https://food-orderng.vercel.app/resetpassword?id=${user._id}&token=${token}`;
 
     //console.log(token)
 
