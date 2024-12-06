@@ -6,7 +6,7 @@ import './register.css'
 
 const ResetPassword = () => {
 
-  const { setError, setLoading, loading, } = useContext(StoreContext)
+  const { setError, setLoading, loading, error } = useContext(StoreContext)
   const navigate = useNavigate()
 
   const query = new URLSearchParams(useLocation().search);
@@ -53,8 +53,18 @@ const ResetPassword = () => {
         setError(res.data.message);
       }
       navigate('/menu')
-    } catch (error) {
-      console.log(error)
+    } catch (error : any) {
+      if (error.response && error.response.data) {
+        const { success, message } = error.response.data;
+
+        // Handle the `success === false` case
+        if (success === false) {
+          console.error('Error:', message); // Logs "Invalid email or password"
+        }
+        setError(message)
+        console.log(error, "is error")
+      }
+      setLoading(false)
     }
   };
 
@@ -72,6 +82,13 @@ const ResetPassword = () => {
             <p>Confirm Password</p>
             <input type="text" name='confirmPassword' onChange={change} placeholder='Password' />
           </div>
+          {
+            error && (
+              <div className="error">
+                {error}
+              </div>
+            )
+          }
           <div className="sig">
             <button onClick={handleSubmit}>{ loading ? "Resetting Password..." : "Submit" }</button>
           </div>

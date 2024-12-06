@@ -5,7 +5,7 @@ import { StoreContext } from '../Context/Context'
 
 const Signup = () => {
 
-  const { change, submit, loading } = useContext(StoreContext)
+  const { change, submit, loading, error } = useContext(StoreContext)
   return (
     <div className='signup'>
       <div className="sign1">
@@ -21,6 +21,13 @@ const Signup = () => {
             <input type="text" name='password' onChange={change} placeholder='Password'/>
             <Link to='/menu/forgot'><span>Forgot password?</span></Link>
           </div>
+          {
+            error && (
+              <div className="error">
+                {error}
+              </div>
+            )
+          }
           <div className="sig">
             <button onClick={submit} disabled={loading}>{ loading ? "Logging In" : "Sign In" }</button>
           </div>

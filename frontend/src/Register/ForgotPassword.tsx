@@ -39,9 +39,18 @@ const ForgotPassword = () => {
       //navigate('/login')
       setLoading(false)
       console.log(res.data)
-    } catch (error) {
-      console.error("Registration error:", error);
-      console.log(error)
+    } catch (error : any) {
+      if (error.response && error.response.data) {
+        const { success, message } = error.response.data;
+
+        // Handle the `success === false` case
+        if (success === false) {
+          console.error('Error:', message); // Logs "Invalid email or password"
+        }
+        setError(message)
+        console.log(error, "is error")
+      }
+      setLoading(false)
     }
   }
 
@@ -55,6 +64,13 @@ const ForgotPassword = () => {
             <p>Email</p>
             <input type="email" name='email' onChange={change} placeholder='Email'/>
           </div>
+          {
+            error && (
+              <div className="error">
+                {error}
+              </div>
+            )
+          }
           <div className="sig">
             <button onClick={submit} disabled={loading}>{ loading ? "Submitting..." : "Submit" }</button>
           </div>
