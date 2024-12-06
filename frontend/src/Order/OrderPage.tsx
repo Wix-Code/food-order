@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { StoreContext } from '../Context/Context'
+import { useNavigate } from 'react-router-dom'
 import './order.css'
 
 import axios from "axios"
@@ -8,6 +9,7 @@ const OrderPage = () => {
 
   //const {cart} = useContext(StoreContext)
   const userData = localStorage.getItem('user');
+  const navigate = useNavigate()
   const userId = userData ? JSON.parse(userData) : null;
   const id = userId?.user?._id
 
@@ -16,8 +18,9 @@ const OrderPage = () => {
   const {cart} = useContext(StoreContext)
 
   useEffect(()=>{
-    
-
+    if(!id){
+      navigate("/login")
+    }
     track()
   }, [])
 

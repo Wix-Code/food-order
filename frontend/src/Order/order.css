@@ -33,6 +33,27 @@
 .order_qty p{
   color: #4b4b4bee;
 }
-@media screen and (max-width : 800px) {
-  
+@media screen and (max-width : 700px) {
+  .orders_page{
+   margin: 0px 20px
+  }
+  .orders_page h1{
+    font-size: 16px;
+  }
+  .order_pg h2, .order_pg h3{
+    font-size: 14px;
+  }
+  .order_pg{
+    display: flex;
+  flex-direction: column;
+  gap: 20px;
+  }
+  .order_qty p{
+    font-size: 11px;
+  }
+}
+@media screen and (min-width : 701px) and (max-width : 1099px) {
+  .orders_page{
+   margin: 0px 20px
+  }
 }
