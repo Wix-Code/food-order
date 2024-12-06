@@ -37,7 +37,6 @@ const Chectout = () => {
   })
 
   const submitBooking = (e : any) => {
-    e.preventDefault()
     setBooking({...booking, [e.target.name]: e.target.value})
   }
 
