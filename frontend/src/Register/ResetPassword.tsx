@@ -13,9 +13,10 @@ const ResetPassword = () => {
   //const query = new URLSearchParams(window.location.search);
   const token = query.get("token");
   const id = query.get("id");
-
-  console.log(id )
-  console.log(token )
+ 
+console.log("ugochukwu")
+  console.log(id, "user id" )
+  console.log(token, "user token" )
 
   const [newPassword, setNewPassword] = useState({
     password: "",
@@ -34,6 +35,8 @@ const ResetPassword = () => {
  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+
     if (newPassword.password !== newPassword.confirmPassword) {
       alert("password do not match")
       return;
@@ -44,11 +47,11 @@ const ResetPassword = () => {
       return;
     }
    
-    const payload = { token, id, newPassword: newPassword.password };
-    setLoading(true);
-
+    const payload = { newPassword: newPassword.password };
+    console.log(payload)
+    const url = `https://food-order-1-p0hh.onrender.com/api/auth/resetpassword?id=${id}&token=${token}`;
     try {
-      const res = await axios.post("https://food-order-1-p0hh.onrender.com/api/auth/resetpassword", payload ,{ withCredentials: true});
+      const res = await axios.post(url, payload ,{ withCredentials: true});
 
       if (res.data.success) {
         alert(res.data.message,);
