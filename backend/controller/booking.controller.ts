@@ -8,7 +8,7 @@ import { uptime } from "process";
 
 export const postBooking : RequestHandler = async (req, res) => {
     
-  const frontend_url = 'http://localhost:3000';
+  const frontend_url = 'https://food-orderng.vercel.app';
 
   try{
     
