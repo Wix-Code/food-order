@@ -25,13 +25,13 @@ const Verify = () => {
     //  id: id,
     //  cart: cart
    // }
-    await axios.post("http://localhost:5000/api/cart/clear", {id}, {
+    await axios.post("https://food-order-1-p0hh.onrender.com/api/cart/clear", {id}, {
       withCredentials : true
     })
   }
 
   const verifyPayment = async () =>{
-    const response = await axios.post("http://localhost:5000/api/order/verify",{orderId : orderId, reference: success},{
+    const response = await axios.post("https://food-order-1-p0hh.onrender.com/api/order/verify",{orderId : orderId, reference: success},{
       withCredentials: true
     });
     if(response.data.success){

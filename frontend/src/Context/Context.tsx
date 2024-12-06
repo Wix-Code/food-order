@@ -98,7 +98,7 @@ const Context = (props : any) => {
   //const[detail, setDetail] =useState(Data)
 
   const fetchData = async () => {
-    const res = await axios.get('http://localhost:5000/api/products', {
+    const res = await axios.get('https://food-order-1-p0hh.onrender.com/api/products', {
       withCredentials: true
     })
     setData(res.data.data)
@@ -106,7 +106,7 @@ const Context = (props : any) => {
   }
 
   const fetchCart = async (id : string) => {
-      const res = await axios.post('http://localhost:5000/api/cart/get', {id})
+      const res = await axios.post('https://food-order-1-p0hh.onrender.com/api/cart/get', {id})
       return res.data.cartData
       //console.log(res.data)
   }
@@ -153,7 +153,7 @@ const Context = (props : any) => {
     e.preventDefault()
     setLoading(true)
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', user, {
+      const res = await axios.post('https://food-order-1-p0hh.onrender.com/api/auth/login', user, {
         withCredentials: true, 
       },)
       //setToken(res.data.token)
@@ -215,7 +215,7 @@ const Context = (props : any) => {
             console.log("Payload being sent to backend:", cartPayload);
 
 
-          const cartResponse = await axios.post('http://localhost:5000/api/cart/push',cartPayload,{
+          const cartResponse = await axios.post('https://food-order-1-p0hh.onrender.com/api/cart/push',cartPayload,{
             withCredentials: true, // Ensures cookies or credentials are sent
           });
 
@@ -273,7 +273,7 @@ const Context = (props : any) => {
     if(id){
       console.log(id, "user's id in cart")
 
-      axios.post('http://localhost:5000/api/cart/add', newCartData,{ 
+      axios.post('https://food-order-1-p0hh.onrender.com/api/cart/add', newCartData,{ 
         headers: { 
           'Authorization': `Bearer ${id}`,  // If you're using Bearer token
           'Content-Type': 'application/json'
@@ -322,7 +322,7 @@ const Context = (props : any) => {
     }
 
     if(id){
-      axios.post('http://localhost:5000/api/cart/add', {
+      axios.post('https://food-order-1-p0hh.onrender.com/api/cart/add', {
         id: id,
         productId: productId,
         name: product.name,
@@ -379,7 +379,7 @@ const Context = (props : any) => {
 
     if(id){
       console.log(id, "increament")
-      axios.post('http://localhost:5000/api/cart/decrease', {
+      axios.post('https://food-order-1-p0hh.onrender.com/api/cart/decrease', {
         id: id,
         productId: productId,
         name: product.name,
@@ -457,7 +457,7 @@ const Context = (props : any) => {
     }
     if(id){
 
-      axios.post('http://localhost:5000/api/cart/remove',   {
+      axios.post('https://food-order-1-p0hh.onrender.com/api/cart/remove',   {
         id,
         productId
     },{ 

@@ -22,7 +22,7 @@ const OrderPage = () => {
   }, [])
 
   const track = async () => {
-    const res = await axios.post("http://localhost:5000/api/order/user", {userId: id}, {
+    const res = await axios.post("https://food-order-1-p0hh.onrender.com/api/order/user", {userId: id}, {
       withCredentials: true
     })
     console.log(res)

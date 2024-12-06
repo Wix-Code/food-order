@@ -26,7 +26,7 @@ const ForgotPassword = () => {
     setLoading(true)
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/forgotpassword',input, {
+      const res = await axios.post('https://food-order-1-p0hh.onrender.com/api/auth/forgotpassword',input, {
         withCredentials: true,
       })
       console.log(input)

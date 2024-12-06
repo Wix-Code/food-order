@@ -42,7 +42,7 @@ const Register = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', user, {
+      const res = await axios.post('https://food-order-1-p0hh.onrender.com/api/auth/register', user, {
         withCredentials: true,
       })
       

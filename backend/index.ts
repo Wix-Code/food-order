@@ -17,7 +17,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:3000', // or use '*' to allow all origins
+  origin: ["https://food-orderng.vercel.app","http://localhost:3000"], // or use '*' to allow all origins
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,  // if you're using cookies or session

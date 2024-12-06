@@ -42,7 +42,7 @@ const ResetPassword = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/resetpassword", {
+      const res = await axios.post("https://food-order-1-p0hh.onrender.com/api/auth/resetpassword", {
         token, id,
         newPassword: newPassword
       },{ withCredentials: true});

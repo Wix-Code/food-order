@@ -67,7 +67,7 @@ const Chectout = () => {
 
     console.log(cartData, "cartDAta")
 
-    const response = await axios.post("http://localhost:5000/api/order",cartData,{
+    const response = await axios.post("https://food-order-1-p0hh.onrender.com/api/order",cartData,{
       withCredentials: true,
     })
     if(response.data.session.status === true){
