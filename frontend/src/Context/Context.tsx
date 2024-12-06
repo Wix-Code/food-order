@@ -160,7 +160,6 @@ const Context = (props : any) => {
       
       
       if (res.data.success) {
-        setError(res.data.message);
         const userId = res.data.user._id
         console.log("user id", userId)
         const cartData = localStorage.getItem("guestCart");

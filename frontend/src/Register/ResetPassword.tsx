@@ -38,14 +38,17 @@ const ResetPassword = () => {
       alert("password do not match")
       return;
     }
-
+    if (!token || !id) {
+      alert("Token or ID is missing");
+      console.error("Token:", token, "ID:", id);
+      return;
+    }
+   
+    const payload = { token, id, newPassword: newPassword.password };
     setLoading(true);
 
     try {
-      const res = await axios.post("https://food-order-1-p0hh.onrender.com/api/auth/resetpassword", {
-        token:token, id: id,
-        newPassword: newPassword
-      },{ withCredentials: true});
+      const res = await axios.post("https://food-order-1-p0hh.onrender.com/api/auth/resetpassword", payload ,{ withCredentials: true});
 
       if (res.data.success) {
         alert(res.data.message,);
@@ -53,6 +56,7 @@ const ResetPassword = () => {
         setError(res.data.message);
       }
       navigate('/menu')
+      setLoading(false)
     } catch (error : any) {
       if (error.response && error.response.data) {
         const { success, message } = error.response.data;
