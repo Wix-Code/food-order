@@ -24,7 +24,7 @@
       "strict": true,  // Enable all strict type-checking options
       "esModuleInterop": true,  // Enable compatibility with ES modules
       "skipLibCheck": true,  // Skip library type checking for faster builds
-      "allowImportingTsExtensions": true,  // Allow importing TS files directly
+      //"allowImportingTsExtensions": true,  // Allow importing TS files directly
       "noEmit": false,  // Emit compiled JS files (set to false to generate output)
       "typeRoots": ["./node_modules/@types", "./@types"],  // Define where to find type definitions
       "baseUrl": ".",  // Base URL for resolving non-relative module names
