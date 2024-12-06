@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './checkout.css'
 import { StoreContext } from '../Context/Context'
 import { useNavigate } from 'react-router-dom'
@@ -85,10 +85,12 @@ const Chectout = () => {
     
   }
 
-  if(!id){
-     navigate("/login")
-  }
-
+   useEffect(()=>{
+    if(!id){
+      navigate("/login")
+    }
+   })
+  
   console.log(cart)
 
   return (
