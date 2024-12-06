@@ -1,8 +1,9 @@
-{
+/*{
   "compilerOptions": {
     "target": "ES6",
     "module": "commonjs",
     "outDir": "dist",
+    "rootDir": "./", 
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -11,10 +12,33 @@
     "typeRoots": ["./node_modules/@types", "./@types"],
     "baseUrl": ".",
     "paths": {
-        "*": ["node_modules/*", "src/types/*"]
+        "*": ["node_modules/*"]
     }
-  },
-
- "include": ["./src/**/*"],
-  //"exclude": ["node_modules"]
-}
+  }, */
+  {
+    "compilerOptions": {
+      "target": "ES6",  // Set ECMAScript target version
+      "module": "commonjs",  // Use CommonJS modules for Node.js
+      "outDir": "dist",  // Output directory for compiled JS files
+      "rootDir": "./",  // Set root directory to the backend folder
+      "strict": true,  // Enable all strict type-checking options
+      "esModuleInterop": true,  // Enable compatibility with ES modules
+      "skipLibCheck": true,  // Skip library type checking for faster builds
+      "allowImportingTsExtensions": true,  // Allow importing TS files directly
+      "noEmit": false,  // Emit compiled JS files (set to false to generate output)
+      "typeRoots": ["./node_modules/@types", "./@types"],  // Define where to find type definitions
+      "baseUrl": ".",  // Base URL for resolving non-relative module names
+      "paths": {
+        "*": ["node_modules/*"]  // Adjust paths as you don't have a 'src' folder
+      }
+    },
+  
+    "include": [
+      "**/*.ts"  // Include all .ts files in the project
+    ],
+    "exclude": [
+      "node_modules",  // Exclude node_modules to avoid compilation
+      "dist"  // Exclude dist folder (compiled JS files)
+    ]
+  }
+  
