@@ -13,13 +13,13 @@ const Signup = () => {
         <h3>Sign In</h3>
           <p>Don't have an account? <Link to='/register'><span>Register</span></Link></p>
           <div className="sign2">
-            <p>Email or Phono No</p>
-            <input type="text" name='email' onChange={change} placeholder='Input your email or phone number'/>
+            <p>Email</p>
+            <input type="text" name='email' onChange={change} placeholder='Input your email' required/>
           </div>
           <div className="sign2">
             <p>Password</p>
-            <input type="text" name='password' onChange={change} placeholder='Password'/>
-            <Link to='/menu/forgot'><span>Forgot password?</span></Link>
+            <input type="text" name='password' onChange={change} placeholder='Password' required/>
+            <Link to='/forgotpassword'><span>Forgot password?</span></Link>
           </div>
           {
             error && (
@@ -29,7 +29,7 @@ const Signup = () => {
             )
           }
           <div className="sig">
-            <button onClick={submit} disabled={loading}>{ loading ? "Logging In" : "Sign In" }</button>
+            <button onClick={submit} disabled={loading}>{ loading ? "Signing In" : "Sign In" }</button>
           </div>
         </div>
       </div>

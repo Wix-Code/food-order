@@ -156,8 +156,6 @@ const Context = (props : any) => {
       const res = await axios.post('https://food-order-1-p0hh.onrender.com/api/auth/login', user, {
         withCredentials: true, 
       },)
-      //setToken(res.data.token)
-      
       
       if (res.data.success) {
         const userId = res.data.user._id
@@ -171,11 +169,6 @@ const Context = (props : any) => {
         if(cartData){
 
           const parsedData = JSON.parse(cartData)
-          //const productId = product.productId;
-
-
-          /*if (Array.isArray(parsedData) && parsedData.length > 0) {
-            console.log("Parsed Cart:", parsedData)};*/
 
             const processedCartData = parsedData.map((item: any) => ({
               _id: item._id,  // Ensure _id is used instead of productId
@@ -187,24 +180,6 @@ const Context = (props : any) => {
               image: item.image,
               quantity: item.quantity || 1
             }));
-  
-            // Validate cart items
-            /*const isValidCart = processedCartData.every((item: any) => 
-              item._id && 
-              typeof item._id === "string" && 
-              item.name && 
-              item.price
-            );
-            //const isValidCart = parsedData.every((item : any) => item.productId && typeof item.productId === "string");
-
-            console.log(isValidCart)
-
-            if (!isValidCart) {
-              console.error("Invalid cart data: One or more items are missing productId.");
-              console.log("Invalid items in parsedData:", parsedData.filter((item: any) => !item.productId || typeof item.productId !== "string"));
-
-              return;
-            }*/
 
             const cartPayload = {
               id: userId, // User ID
@@ -278,6 +253,12 @@ const Context = (props : any) => {
       quantity: 1
     };
 
+    const updatedCart = [...cart, newCartData];
+    console.log(updatedCart, "Updated cart is here")
+    localStorage.setItem("guestCart", JSON.stringify(updatedCart));
+    setCart(updatedCart); // Update the cart state
+    toast.success("Product added to local storage cart!");
+
     if(id){
       console.log(id, "user's id in cart")
 
@@ -291,14 +272,14 @@ const Context = (props : any) => {
       setCart([...cart,{...newCartData}]);
       toast.success("Added to user's cart in database")
     }
-    else {
-      // For unauthenticated users, store the cart in localStorage
+    /*else {
+      For unauthenticated users, store the cart in localStorage
       const updatedCart = [...cart, newCartData];
       console.log(updatedCart, "Updated cart is here")
       localStorage.setItem("guestCart", JSON.stringify(updatedCart));
-      setCart(updatedCart); // Update the cart state
+      setCart(updatedCart);  Update the cart state
       toast.success("Product added to cart as a guest!");
-    }
+    }*/
 }
 
   const inc = (product : CartItem) => {
@@ -414,40 +395,6 @@ const Context = (props : any) => {
     } 
   }
 
-  /*const dec = (product : CartItem) => {
-    const productId = product.productId;
-
-    const exist = cart.find((dat) => {
-      return dat._id === productId
-    }) 
-    if (exist) {
-      if (exist.quantity === 1) {
-          // Remove the product if the quantity is 1
-          setCart(cart.filter((dat) => dat._id !== productId));
-      } else {
-          // Decrement the quantity otherwise
-          setCart(
-            cart.map((dat) =>
-                dat._id === productId ? { ...dat, quantity: dat.quantity - 1 } : dat
-            )
-          );
-      }
-    }
-    if(id){
-
-      axios.post('http://localhost:5000/api/cart/decrease',   {
-        productId: productId,
-        quantity: exist.quantity - 1,
-    },{ 
-        headers: { 
-          'Authorization': `Bearer ${id}`,  // If you're using Bearer token
-          'Content-Type': 'application/json'
-        },
-        withCredentials: true  // If using cookies
-      })
-    }
-  }*/
-
   const clear = (product : CartItem) => {
     const productId = product.productId;
 
@@ -475,6 +422,8 @@ const Context = (props : any) => {
         },
         withCredentials: true  // If using cookies
       })
+      toast.success("Item Removed from database");
+
     } else{
       const cartData = JSON.parse(localStorage.getItem("guestCart") || "[]");
       const updatedCart = cartData.filter((dat: CartItem) => dat.productId !== productId);
@@ -482,7 +431,6 @@ const Context = (props : any) => {
       setCart(updatedCart)  
       toast.success("Item Removed from local storage");  
     }
-    toast.success("Item Removed");
   }
 
   const total = cart.reduce((add, item) =>  add + item.quantity * item.price, 0)

@@ -43,7 +43,7 @@ const Rout = () => {
         <Route path="/register" element={<Register />}/>
         <Route path='/resetpassword' element={<ResetPassword />} />
         <Route path='/login' element={<Signup />} />
-        <Route path='/menu/forgot' element={<ForgotPassword />} />
+        <Route path='/forgotpassword' element={<ForgotPassword />} />
         <Route path='/regis' element={<Regis />} />
         <Route path='/check' element={<Chectout />} />
         <Route path='/verify' element={<Verify />} />

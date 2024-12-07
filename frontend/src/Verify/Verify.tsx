@@ -1,7 +1,8 @@
 import axios from 'axios';
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { StoreContext } from '../Context/Context';
+import Loader from '../Loader/Loader';
 
 const Verify = () => {
 
@@ -14,12 +15,14 @@ const Verify = () => {
   const orderId = searchParams.get("orderId")
   const navigate = useNavigate();
   const {setCart, cart} = useContext(StoreContext)
+  const [loader, setLoader] = useState(true)
+
   console.log(success)
   console.log(orderId)
 
   
 
-  const clearCart = async () => {
+  /*const clearCart = async () => {
 
     //const data = {
     //  id: id,
@@ -28,7 +31,15 @@ const Verify = () => {
     await axios.post("https://food-order-1-p0hh.onrender.com/api/cart/clear", {id}, {
       withCredentials : true
     })
-  }
+  }*/
+    useEffect(()=>{
+      verifyPayment();
+    },[])
+  
+    useEffect(() => {
+      setTimeout(() => setLoader(false), 3000)
+    }, [])
+
 
   const verifyPayment = async () =>{
     const response = await axios.post("https://food-order-1-p0hh.onrender.com/api/order/verify",{orderId : orderId, reference: success},{
@@ -44,10 +55,10 @@ const Verify = () => {
     }
   }
 
-  useEffect(()=>{
-    verifyPayment();
-  },[])
-
+  if (loader) {
+    return <Loader />
+  }
+  
   return (
     null
   )

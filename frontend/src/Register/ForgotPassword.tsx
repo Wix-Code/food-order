@@ -64,7 +64,7 @@ const ForgotPassword = () => {
         <h3>Forgot Password</h3>
           <div className="sign2">
             <p>Email</p>
-            <input type="email" name='email' onChange={change} placeholder='Email'/>
+            <input type="email" name='email' onChange={change} placeholder='Email' required/>
           </div>
           {
             err && (

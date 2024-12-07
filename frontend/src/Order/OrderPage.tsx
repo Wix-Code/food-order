@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import './order.css'
 
 import axios from "axios"
+import Loader from '../Loader/Loader'
 
 const OrderPage = () => {
 
@@ -17,12 +18,22 @@ const OrderPage = () => {
 
   const {cart} = useContext(StoreContext)
 
+  const [loader, setLoader] = useState(true)
+
+ 
+
   useEffect(()=>{
     if(!id){
       navigate("/login")
     }
     track()
+  }, [id, navigate])
+
+  useEffect(() => {
+    setTimeout(() => setLoader(false), 3000)
   }, [])
+
+  
 
   const track = async () => {
     const res = await axios.post("https://food-order-1-p0hh.onrender.com/api/order/user", {userId: id}, {
@@ -33,6 +44,10 @@ const OrderPage = () => {
       setOrder(res.data.data)
     }
     console.log(order)
+  }
+
+  if (loader) {
+    return <Loader />
   }
 
 

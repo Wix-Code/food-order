@@ -3,18 +3,18 @@ import Homeie from './Homeie'
 import Story from './Story'
 import Order from './Order'
 import Icons from './Icons'
-import Loader from '../Loader/Loader'
+//import Loader from '../Loader/Loader'
 
 
 const HomePage = () => {
-  const [loader, setLoader] = useState(true)
+ /*const [loader, setLoader] = useState(true)
 
   useEffect(() => {
     setTimeout(() => setLoader(false), 5000)
   }, [])
   if (loader) {
     return <Loader />
-  }
+  }*/
   return (
     <div>
       <Homeie />

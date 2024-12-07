@@ -89,11 +89,11 @@ console.log("ugochukwu")
         <h3>Reset Password</h3>
           <div className="sign2">
             <p>New Password</p>
-            <input type="text" name='password' onChange={change} placeholder='New Password'/>
+            <input type="text" name='password' onChange={change} placeholder='New Password' required/>
           </div>
           <div className="sign2">
             <p>Confirm Password</p>
-            <input type="text" name='confirmPassword' onChange={change} placeholder='Password' />
+            <input type="text" name='confirmPassword' onChange={change} placeholder='Password' required/>
           </div>
           {
             err && (
@@ -103,7 +103,7 @@ console.log("ugochukwu")
             )
           }
           <div className="sig">
-            <button onClick={handleSubmit}>{ loading ? "Resetting Password..." : "Submit" }</button>
+            <button onClick={handleSubmit} disabled={loading}>{ loading ? "Resetting Password..." : "Submit" }</button>
           </div>
         </div>
       </div>
