@@ -41,6 +41,9 @@ form button{
   font-size: 16px;
   cursor: pointer;
 }
+form button:disabled{
+  background: rgb(0, 43, 0);
+}
 .input_check{
   display: flex;
   flex-direction: column;
@@ -94,6 +97,9 @@ form button{
 .sum2 p{
   font-size: 14px;
 }
+.note{
+  font-size: 14px;
+}
 
 @media screen and (max-width : 599px){
   .check_out{
@@ -113,6 +119,9 @@ form button{
   }
   .check_sum h1{
     font-size: 18px;
+  }
+  .note{
+    font-size: 12px;
   }
   .input_check input, .input_check label{
     font-size: 14px;

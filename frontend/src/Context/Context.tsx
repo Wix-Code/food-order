@@ -156,7 +156,7 @@ const Context = (props : any) => {
       const res = await axios.post('https://food-order-1-p0hh.onrender.com/api/auth/login', user, {
         withCredentials: true, 
       },)
-      
+
       if (res.data.success) {
         const userId = res.data.user._id
         console.log("user id", userId)
@@ -253,11 +253,11 @@ const Context = (props : any) => {
       quantity: 1
     };
 
-    const updatedCart = [...cart, newCartData];
+    /*const updatedCart = [...cart, newCartData];
     console.log(updatedCart, "Updated cart is here")
     localStorage.setItem("guestCart", JSON.stringify(updatedCart));
     setCart(updatedCart); // Update the cart state
-    toast.success("Product added to local storage cart!");
+    toast.success("Product added to local storage cart!");*/
 
     if(id){
       console.log(id, "user's id in cart")
@@ -272,14 +272,14 @@ const Context = (props : any) => {
       setCart([...cart,{...newCartData}]);
       toast.success("Added to user's cart in database")
     }
-    /*else {
-      For unauthenticated users, store the cart in localStorage
+    else {
+      //For unauthenticated users, store the cart in localStorage
       const updatedCart = [...cart, newCartData];
       console.log(updatedCart, "Updated cart is here")
       localStorage.setItem("guestCart", JSON.stringify(updatedCart));
-      setCart(updatedCart);  Update the cart state
+      setCart(updatedCart);  //Update the cart state
       toast.success("Product added to cart as a guest!");
-    }*/
+    }
 }
 
   const inc = (product : CartItem) => {

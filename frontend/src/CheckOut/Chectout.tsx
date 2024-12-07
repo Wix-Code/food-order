@@ -6,7 +6,7 @@ import axios from 'axios'
 
 const Chectout = () => {
 
-  const {cart, total, setCart } = useContext(StoreContext)
+  const {cart, total, loading } = useContext(StoreContext)
   const navigate = useNavigate()
   const userData = localStorage.getItem('user');
 
@@ -138,7 +138,7 @@ const Chectout = () => {
               <input type="text" name="phoneNo" placeholder='Phone Number' onChange={submitBooking}/>
             </div>
           </div>
-          <button onClick={makePayment}>PROCEED TO PAYMENT</button>
+          <button onClick={makePayment} disabled={loading}>{loading ? "PROCESSING..." : "PROCEED TO PAYMENT"}</button>
         </form>
       </div>
       <div className="checkout2">
@@ -157,12 +157,12 @@ const Chectout = () => {
                     <div className="sum2">
                       <h3>x{item.quantity}</h3>
                       <p>{item.price * item.quantity}</p>
-                    </div>
-                  
+                    </div>                
                   </div>
                 )
               })
             }
+            <p className='note'>Note &#8358;1000 for delivery fee will be added to the total amount during payment</p>
           </div>
         </div>
       </div>
