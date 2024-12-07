@@ -21,7 +21,7 @@ const Ricee = () => {
             <h2>{dat.name}</h2>
             <h3>{dat.desc}</h3>
             <img src={dat.image} alt="" />
-            <button onClick={()=>addtocart(dat)}>add to cart <span>${dat.price}</span></button>
+            <button onClick={()=>addtocart(dat)}>add to cart <span>&#8358;{dat.price}</span></button>
           </div>
         )
       })}
